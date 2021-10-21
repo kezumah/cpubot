@@ -38,15 +38,14 @@ Written by Tianhao Yu
 7.1 Schedules are used to let a certain function run at a specific time. 3 schedule commands are used to measure CPU
 temperature every 10 minutes, report daily summary at 23:50 and close the program at 23:51.
 
-## :::::::::::::::::::::::::::::::::::::::: TWITTER SECTION :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-Written by Kennedy C. Ezumah
+## Twitter Bot Section
+#### Written by Kennedy C. Ezumah
 
 ### SETTING UP A TWITTER DEVELOPER ACCOUNT:
 
 1. First create a Twitter Developer account and a custom Twitter App to gain access to the Twitter API.
 
-   > > > https://developer.twitter.com/en
+      https://developer.twitter.com/en
 
 2. If the Twitter account that you used to create the developer account is different from that which you will use as a bot,
    you will need to run the "authorize_nonprimary.py" module to authorize its interaction with your Twitter App (Wait until step 4 to do this).
@@ -64,7 +63,7 @@ Written by Kennedy C. Ezumah
 
 5. Paste the pin sequence into the input field on-display in python, making sure to add quotation marks to identify it as a string object:
 
-   > > > PIN: "AHD72O19"
+      PIN: "AHD72O19"
 
 6. Once this is complete, the access key and token for your bot account will be displayed. You do not have to do anything, as by this point, they have been automatically
    saved as key-value pairs in your "twitter_api_credentials" .JSON file. At this point your Twitter App has been authorized to perform actions on your
