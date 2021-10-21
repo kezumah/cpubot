@@ -1,8 +1,8 @@
-# RASPBERRYPI CPU TEMPERATURE MONITOR PROGRAM
+# Raspberrypi CPU Temperature Monitor Bot
 
 4/26/2021
 
-## :::::::::::::::::::::::::::::::::::::::: MAIN PROGRAM SECTION :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+##  MAIN PROGRAM SECTION 
 
 Written by Tianhao Yu
 
