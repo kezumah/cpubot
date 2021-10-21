@@ -45,7 +45,7 @@ temperature every 10 minutes, report daily summary at 23:50 and close the progra
 
 1. First create a Twitter Developer account and a custom Twitter App to gain access to the Twitter API.
 
-      https://developer.twitter.com/en
+      "https://developer.twitter.com/en"
 
 2. If the Twitter account that you used to create the developer account is different from that which you will use as a bot,
    you will need to run the "authorize_nonprimary.py" module to authorize its interaction with your Twitter App (Wait until step 4 to do this).
