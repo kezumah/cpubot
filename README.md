@@ -1,4 +1,5 @@
 # Raspberrypi CPU Temperature Monitor Bot
+Bot: https://twitter.com/CPUBot1
 
 4/26/2021
 
@@ -41,37 +42,37 @@ temperature every 10 minutes, report daily summary at 23:50 and close the progra
 ## Twitter Bot Section
 #### Written by Kennedy C. Ezumah
 
-### SETTING UP A TWITTER DEVELOPER ACCOUNT:
+### Setting up a Twitter Developer Account:
 
 1. First create a Twitter Developer account and a custom Twitter App to gain access to the Twitter API.
 
       <code>https://developer.twitter.com/en</code>
 
 2. If the Twitter account that you used to create the developer account is different from that which you will use as a bot,
-   you will need to run the "authorize_nonprimary.py" module to authorize its interaction with your Twitter App (Wait until step 4 to do this).
+   you will need to run the <code>authorize_nonprimary.py</code> module to authorize its interaction with your Twitter App (Wait until step 4 to do this).
 
-### SETTING UP TWITTER CREDENTIALS:
+### Setting up Twitter API Credentials:
 
-3. Create a .JSON file named "twitter_api_credentials", where you will proceed to make a dictionary to store the API key and token from your Twitter App.
+3. Create a .JSON file named <code>twitter_api_credentials</code>, where you will proceed to make a dictionary to store the API key and token from your Twitter App.
    Keep this file in the same working directory as your files, as this is where you will store the access key and token that you will extract from your
    bot account. It is essential to keep this information in a separate file, and avoid hard-coding it into your program in order to minimize security risks
-   and make your program flexible and easy to manage.
+   and make your program modular and easy to manage.
 
-4. Run the "authorize_nonprimary.py" file to begin the authorization process. A url will be produced. Copy the url and paste it into a separate browser.
-   It is important to run this in a browser on which you are not currently signed on to your Twitter Developer account. The link will prompt you to sign in to your
+4. Run the <code>authorize_nonprimary.py</code> file to begin the authorization process. A url will be produced. Copy the url and paste it into a separate browser.
+   It is important to run this in a browser on which you are not currently signed-in to your Twitter Developer account. The link will prompt you to sign in to your
    intended bot account. Sign in, authorize, and copy the pin sequence shown on the screen.
 
 5. Paste the pin sequence into the input field on-display in python, making sure to add quotation marks to identify it as a string object:
 
-      PIN: "AHD72O19"
+      <code>PIN: "AHD72O19"</code>
 
 6. Once this is complete, the access key and token for your bot account will be displayed. You do not have to do anything, as by this point, they have been automatically
-   saved as key-value pairs in your "twitter_api_credentials" .JSON file. At this point your Twitter App has been authorized to perform actions on your
+   saved as key-value pairs in your <code>twitter_api_credentials.json</code> file. At this point your, Twitter App has been authorized to perform actions on your
    bot account and you are ready to post!
 
-### PUBLISHING A BOT-TWEET:
+### Publishing a Bot Tweet:
 
-7. Run the "driver_file.py" file and enter a custom tweet. Head over to twitter to see that your tweet is successful!
+7. Run the <code>driver_file.py</code> file and enter a custom tweet. Head over to twitter to see that your tweet is successful!
 
 ## :::::::::::::::::::::::::::::::::::::::: WEB-SCRAPER SECTION :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
