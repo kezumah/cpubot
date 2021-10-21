@@ -1,0 +1,80 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+"""
+   CS5001 Group 4
+   Spring 2021
+   Xiaoman Yang
+   Part of our group's final project: Write a web-scraper for the pi, exstracting data from any websites for hours to test the CPU temperature under load.
+"""
+
+import requests
+from bs4 import BeautifulSoup
+import time
+from random import randint
+
+# I chose to scrape job openings for Software Developers from Indeed
+# First, design a function to get the url of different locations
+def get_url(location):
+    website = "https://www.indeed.com/jobs?q=software+developer&l={}"
+    url = website.format(location)
+
+    return url
+
+
+# Design a function to get the information we want from the website
+def get_info(result):
+    company = result.find("span", "company").text.strip()
+    location = result.find("div","recJobLoc").get("data-rc-loc")
+    summary = result.find("div", "summary")
+    summary = summary.text.strip()
+
+    info = (company, location, summary)
+
+    return info
+
+
+def main():
+    # We're looking for Software Developer jobs from top tech towns
+    locations = ["Seattle", "Silicon+Valley", "San+Francisco", "San+Jose", "Boston", "New+York", "Austin", "Dallas", "Atlanta", "Charlotte", "Washington+DC", "San+Diego", "Baltimore"]
+
+    # Loop through the towns
+    for i in range(len(locations)):
+        job_loc = locations[i]
+        url = get_url(job_loc)
+
+        # store the results in an empty list for different cities
+        job_info = []
+
+        time.sleep(randint(1,5))
+
+        # Loop oever every page of the searching result
+        while True:
+            # Send a request
+            response = requests.get(url)
+            # Parse the html code
+            soup = BeautifulSoup(response.content, "html.parser")
+            # Find all tags with the information we're looking for
+            results = soup.find_all("div", "jobsearch-SerpJobCard")
+
+            # Loop through the tags to get the infos
+            for result in results:
+                info = get_info(result)
+                job_info.append(info)
+
+                time.sleep(randint(1,5))
+
+            # If we reach the last page, stop the while loop and search
+            if not soup.find("a",{"aria-label": "Next"}):
+                print(job_info)
+                break
+            # Go to the next page, if any
+            else:
+                url = "https://www.indeed.com" + soup.find("a",{"aria-label": "Next"}).get("href")
+                time.sleep(randint(1,5))
+                print(url)
+                continue
+
+
+if __name__ == "__main__":
+    main()
